@@ -8,3 +8,4 @@ print('Result of 5 / 3 =', 5//3) # // = round the result number to 0 characters 
 nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print('Minimal number:', min(nums))
 print('Maximal number:', max(nums))
+print('Number (5^3) to a power: ', pow(5, 3))
