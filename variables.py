@@ -11,3 +11,8 @@ print('number: ', number)
 print('string: ', string)
 print('digit: ', digit)
 print('boolean: ', boolean)
+
+numAsStr = str('5') # str to int
+strAsNum = int(5) # int to str
+
+print(numAsStr, strAsNum)
