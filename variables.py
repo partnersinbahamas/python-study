@@ -14,5 +14,10 @@ print('boolean: ', boolean)
 
 numAsStr = str('5') # str to int
 strAsNum = int(5) # int to str
+strAsBool = bool('is it bool?')
+numAsBool = bool(0) # num to True / False
+intAsFloat = float(1) # int to float
 
+print('bool casting: ',strAsBool, numAsBool)
+print('int as float: ', intAsFloat)
 print(numAsStr, strAsNum)
