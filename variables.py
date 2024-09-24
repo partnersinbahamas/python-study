@@ -21,3 +21,13 @@ intAsFloat = float(1) # int to float
 print('bool casting: ',strAsBool, numAsBool)
 print('int as float: ', intAsFloat)
 print(numAsStr, strAsNum)
+
+# input
+x = int(input('Enter X:')) # after enter input returns str, so we need to casting to it int
+y = int(input('Enter Y:'))
+
+print('Calculation "+" answear', x + y, sep=': ')
+print('Calculation "-" answear', x - y, sep=': ')
+print('Calculation "*" answear', x * y, sep=': ')
+print('Calculation "/" answear', x / y, sep=': ')
+print('Calculation "**" answear', pow(x, y), sep=': ')
