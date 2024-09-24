@@ -31,3 +31,12 @@ print('Calculation "-" answear', x - y, sep=': ')
 print('Calculation "*" answear', x * y, sep=': ')
 print('Calculation "/" answear', x / y, sep=': ')
 print('Calculation "**" answear', pow(x, y), sep=': ')
+
+print('?: ', 'Hi' * 2) # ? yes, it will works => HiHi
+
+# if we change data type for the same var
+# inside py engine it works so:
+# firtly we delete the str 'test' var using del
+# and the create a new one int 'test' var
+test = 'test string'
+test = 10
