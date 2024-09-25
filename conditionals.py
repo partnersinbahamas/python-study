@@ -1,6 +1,4 @@
-user_data = int(input('Please enter any number:'))
-
-
+user_data = int(input('Please enter any number: '))
 
 if user_data > 0:
     print('Your number is more then 0 | Input: ', user_data)
@@ -8,3 +6,10 @@ if user_data > 0:
         print('Your number is more then 10 | Input: ', user_data)
 else:
    print('Your number is less then 0 | Input: ', user_data)
+
+user_bool_data = input('Are you happy? Please answear + or -: ')
+
+if not user_bool_data == '+':
+    print('Am sorry, you are no happy...')
+else: 
+    print('You are no happy!!!')
