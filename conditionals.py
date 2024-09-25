@@ -21,3 +21,4 @@ if user_data == 10 and user_bool_data:
 
 if user_data == 10 or user_bool_data:
     print('0.5 boiiii')
+
