@@ -12,3 +12,17 @@ for char in string:
   if char == '!':
     print('char index: ', charIndex)
   charIndex += 1
+
+print('------ while loop')
+
+i = 0
+while i <= 10:
+  print('i: ', i)
+  i += 1
+
+isInfinite = True
+while isInfinite:
+  value = input('Print: ')
+  if value == 'Stop' or value == 'stop':
+    print('Stop programm')
+    isInfinite = False
