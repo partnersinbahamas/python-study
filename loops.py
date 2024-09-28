@@ -4,6 +4,11 @@ for item in range:
 
 print('------')
 
-string = 'Python'
+string = 'Python !'
+charIndex = 0
+
 for char in string:
   print('char: ', char)
+  if char == '!':
+    print('char index: ', charIndex)
+  charIndex += 1
