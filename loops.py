@@ -13,6 +13,15 @@ for char in string:
     print('char index: ', charIndex)
   charIndex += 1
 
+for i in range:
+  if i % 2 == 0:
+    continue
+  
+  print('i: ', i)
+
+  if i == 7:
+    break
+  
 print('------ while loop')
 
 i = 0
