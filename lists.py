@@ -1,6 +1,8 @@
 list = [1, 2, 3, 4, 5, [6, 7]]
 list[0] = 10
 lastElement = list[-1][-1]
+steps = list[1:6:2] # (start:stop:step)
+print(steps)
 print(list, lastElement)
 
 print('-----')
