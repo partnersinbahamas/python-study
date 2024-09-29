@@ -36,8 +36,11 @@ langsCapitalize = ' | '.join(splitLangs)
 
 print(langs, splitLangs, langsCapitalize)
 
-# steps | срезы 
+# steps | срезы
+# steps work same for list, tuples etc..
 
 word = 'Porsche'
 print(word[0::2]) # (from:to = -1:step = 1) => sche
 print(word[1::2]) # (from:to = -1:step = 1) => sche
+print(word[::-1]) # reverse string
+print(word[:4:]) # until 4th index
