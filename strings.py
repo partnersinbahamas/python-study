@@ -35,3 +35,9 @@ for index in range(len(splitLangs)):
 langsCapitalize = ' | '.join(splitLangs)
 
 print(langs, splitLangs, langsCapitalize)
+
+# steps | срезы 
+
+word = 'Porsche'
+print(word[0::2]) # (from:to = -1:step = 1) => sche
+print(word[1::2]) # (from:to = -1:step = 1) => sche
