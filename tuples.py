@@ -1,3 +1,5 @@
+
+# IMPORTANT: to create tuple use: (element,) | element, | (element, element) | element, element
 # Hint:
     # has most of methods from lists(arrays) 
     # tuples similar with lists(arrays),
@@ -14,4 +16,7 @@ lastOfTuple = tuple[-1]
 # tuple[0] = 'change tuple' # error => tuple is constat
 print('tuple: ', tuple, lastOfTuple)
 
-# IMPORTANT: to create tuple use: (element,) | element, | (element, element) | element, element
+print('----- tuples in loops')
+
+for tupleEl in tuple:
+    print('element: ', tupleEl)
