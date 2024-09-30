@@ -1,4 +1,6 @@
-# Set: returns random sorted with non-repeating chars
+# Set
+# returns random sorted with non-repeating chars
+
 data = set('Python')
 # data[0] = 0 # will not works
 
@@ -14,3 +16,8 @@ nums = [2, 0, 7, 0, 4]
 set_nums = set(nums)
 
 print(nums, set_nums)
+
+# Frozenset: set witch works as a tuple
+
+new_data = frozenset(['Hello', 'world', '!!!'])
+print(new_data)
