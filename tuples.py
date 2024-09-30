@@ -11,12 +11,20 @@
 testTuple = (5)
 print('testTuple: ', testTuple)
 
-tuple = ('string', 1, True) # creates with () or just: 'string', 1, True
-lastOfTuple = tuple[-1]
+tupleData = ('string', 1, True) # creates with () or just: 'string', 1, True
+lastOfTuple = tupleData[-1]
 # tuple[0] = 'change tuple' # error => tuple is constat
-print('tuple: ', tuple, lastOfTuple)
+print('tupleData: ', tupleData, lastOfTuple)
 
 print('----- tuples in loops')
 
-for tupleEl in tuple:
+for tupleEl in tupleData:
     print('element: ', tupleEl)
+
+print('-----')
+
+nums = [1, 2, 3, 4, 5]
+numsTuple = tuple(nums) # reverse list to tuple
+stringTuple = tuple('lern Phython')
+print('list: ', nums, 'tuple: ', numsTuple)
+print('stringTuple: ', stringTuple)
