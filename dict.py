@@ -30,3 +30,6 @@ user = dict(
 listDictTuple = user.items() # retust list of tuples from user dict [(key: value), (key: value)]
 
 print('user: ', user, listDictTuple)
+
+for key, value in user.items():
+    print('Key:', key, 'Value:', value)
