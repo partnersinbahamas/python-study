@@ -12,5 +12,6 @@ def findIndex(list, item):
     print('Element not exist.')
     return None
 
-finded = findIndex([1, 2, 3], 3)
-print('finded index: ', finded)
+nums = [1, 2, 3]
+finded = findIndex(nums, 3)
+print('finded index: ', finded, nums[finded])
