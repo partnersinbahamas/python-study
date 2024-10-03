@@ -24,4 +24,20 @@ def appendToFile(path):
     # close file to avoid memory leak
     file.close
 
+def readFromFile(path):
+    file = open(path, 'r')
+    # file_content = file.read() # (readLength) return file content
+
+    print('---- OPEN ----')
+    print(str('READ - ' + path + ': \n'))
+
+    lineIndex = 1
+    for line in file: # loop for each line in file
+        print(str(lineIndex) + ': ', line, end='')
+        lineIndex += 1
+
+    print('\n---- CLOSE ----')
+    file.close()
+
 appendToFile(my_path)
+readFromFile(my_path)

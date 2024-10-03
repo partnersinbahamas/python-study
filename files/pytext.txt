@@ -1,3 +1,4 @@
 Texts from Python:
 
 Write from py terminal
+new line to READ
