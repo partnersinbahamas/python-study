@@ -1,0 +1,3 @@
+Texts from Python:
+
+Write from py terminal
