@@ -22,7 +22,7 @@ def appendToFile(path):
     file.write(user_value + '\n')
 
     # close file to avoid memory leak
-    file.close
+    file.close()
 
 def readFromFile(path):
     file = open(path, 'r')
