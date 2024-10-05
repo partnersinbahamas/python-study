@@ -2,13 +2,17 @@
 # is like trycatch in JavaScript
 
 def userEnterValue():
-  try:
-    numX = int(input('Enter X:'))
-    numY = int(input('Enter X:'))
+  numX = None
+  numY = None
 
-    return numX + numY
-  except ValueError: # error key
-    return 'Invalid value. Try again.'
+  while(numY == None and numY == None):
+    try:
+        numX = int(input('Enter X:'))
+        numY = int(input('Enter Y:'))
+
+        return numX + numY
+    except ValueError: # error key
+        print('Invalid value. Try again.')
 
 print(userEnterValue())
  
