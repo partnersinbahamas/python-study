@@ -13,6 +13,14 @@ def userEnterValue():
         return numX + numY
     except ValueError: # error key
         print('Invalid value. Try again.')
+    # you can handle multiple errors in a row
+    except ZeroDivisionError:
+        print('Zero division allowed. Try again.')
+    # else calls if no error handler was called or was called try block
+    else:
+        print('Else')
+    finally:
+       print('Finally done')
 
 print(userEnterValue())
  
