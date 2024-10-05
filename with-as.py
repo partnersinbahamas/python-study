@@ -13,3 +13,13 @@ finally:
     # file.close()
     print('Finally')
 
+# Expample with as
+def readFile(path):
+    try:
+        # with as opens file and late close it by themself
+        with open(path, 'r', encoding='utf-8') as file:
+            print(file.read())
+    except FileNotFoundError:
+        print('File not found.')
+
+readFile('files/pytext.txt')
