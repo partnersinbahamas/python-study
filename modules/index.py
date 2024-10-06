@@ -6,6 +6,7 @@ import time
 import datetime as dt
 import sys, os # system, operation system: modules with info about user
 import platform # os platform
+from infoModule import getInfo
 
 # posible imports too
 from math import sqrt 
@@ -30,3 +31,6 @@ print('path to project: ', sys.path)
 
 # os
 print('Device info: ', os.name, platform.system())
+
+# my info module
+print('Info', getInfo())
