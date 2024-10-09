@@ -1,5 +1,6 @@
 list = [1, 2, 3, 4, 5, [6, 7]]
 list[0] = 10
+del list[3] # delete element with index 3
 lastElement = list[-1][-1]
 steps = list[1:6:2] # (start:stop:step)
 print(steps)
