@@ -39,4 +39,9 @@ print('?: ', 'Hi' * 2) # ? yes, it will works => HiHi
 # firtly we delete the str 'test' var using del
 # and the create a new one int 'test' var
 test = 'test string'
+
 test = 10
+test2 = 10
+
+# func id returns uniq series of number witch an address that references a location in memory.
+print('1: ', id(test), id(test2)) # True because Python optimizes small integers
