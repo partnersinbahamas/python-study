@@ -16,7 +16,8 @@ quotes = [
 
 for q in quotes:
     print(q[1:-1])
-
+    #or
+    print(q.strip("'"))
 nums = [1, 2, 3, 4, 5]
 strNums = []
 for n in nums:
