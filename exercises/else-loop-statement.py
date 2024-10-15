@@ -14,7 +14,6 @@ def guessGame():
 
     print(guess)
 
-
     while user_num != guess:
         user_num = int(input('Try to guess number from 0 til 100: '))
 
@@ -26,3 +25,14 @@ def guessGame():
         print(f'Congratulations you guessed the {guess} number.')
 
 guessGame()
+
+for char in 'Python':
+    if (char == 'o'):
+        continue
+    else:
+        print(char)
+
+for n in range(1, 101):
+    if n % 2 == 0:
+        continue
+    print(n)
