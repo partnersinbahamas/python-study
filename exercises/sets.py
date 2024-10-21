@@ -19,7 +19,8 @@ new_sym_difference = new_difference.symmetric_difference(other_set)
 print(new_union, new_difference, new_sym_difference)
 
 
-n_range = range (1, 11)
+n_range = set(range (1, 11))
+
 user_num = int(input("Enter number: "))
 
 print(user_num in n_range)
