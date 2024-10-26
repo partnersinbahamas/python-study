@@ -10,3 +10,12 @@ nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print('Minimal number:', min(nums))
 print('Maximal number:', max(nums))
 print('Number (5^3) to a power: ', pow(5, 3))
+
+x = 2
+print(globals()) # returns global dict of scopes
+
+def test():
+    a = None
+    print(locals()) # returns a locals dict of scopes
+
+test()
