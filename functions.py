@@ -45,3 +45,32 @@ print(greatest_student_grade)
 
 sortedStudents = sorted(students, key=lambda student: student['grade_average'])
 
+# * collects all func parametes as arguments
+# first goes only key-params
+def argsFunc(string, *numbers):
+    print(string)
+    for n in numbers:
+        print('number: ', n)
+
+argsFunc('1', 2, 3, 4)
+
+# we kann use * as well to unpack some values like distructurisatoin
+numbers = [1, 2, 3, 4, 5] 
+print(*numbers, sep=" | ") # *numbers returns: 1, 2, 3, 4, 5
+
+# ** collects all func parametes as key=value and returns dictionary
+def kwargsFunc(**kwargs):
+    for key, value in kwargs.items(): # dict
+        print(key, value)
+
+kwargsFunc(name='Denys', surname='Bokov')
+
+# as well for ** we can dictionary destructurin
+
+movie = {
+    "title": "The Matrix",
+    "director": "Wachowski",
+    "year": 1999
+}
+
+kwargsFunc(**movie) # **movies gives just "title": "The Matrix" etc..
