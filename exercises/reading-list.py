@@ -1,3 +1,8 @@
+import json
+
+# json.load: (file, ...) => py dict
+# json.dump: (file) => json
+
 menu_promt = """Please select option:
 - 'a': to add
 - 's': to show store
@@ -6,93 +11,91 @@ menu_promt = """Please select option:
 - 'q': to quit
 """
 
-def clear_books():
+def create_books_file():
     try:
-        with open('files/books.csv', 'w') as file:
-            file.write('title,author,release')
-    except FileNotFoundError:
-        print('Not found.')
+        initial_books = [
+            dict(
+                title="Design Patterns. Elements Of Reusable Object-Oriented Software",
+                author="Gang Of Four",
+                release="1994",
+            ),
+            dict(
+                title="Charlie And The Chocolate Factory",
+                author="Alfred A. Knopf",
+                release="1964",
+            ),
+        ]
+        with open('files/books.json', 'x') as books:
+            json.dump(initial_books, books)
+    except FileExistsError:
+        pass
+
+create_books_file()
+
+def clear_books(): updateBooks([])
 
 def getBooks():
-    books = []
-
-    try:
-        with open('files/books.csv', 'r') as file_books:
-            books_content = file_books.readlines()
-            if len(books_content) <= 0:
-                print('Books are empty.')
-            else:
-                for book in books_content[1:]:
-
-                    title, author, release = book.strip().split(',')
-
-                    bookDict = dict(
-                      title=title,
-                      author=author,
-                      release=release
-                    )
-
-                    books.append(bookDict)
-        return books
-    except FileNotFoundError:
-        print('Not found')
-
+    with open('files/books.json', 'r') as books_file:
+        books_content = json.load(books_file)
+        if len(books_content) <= 0:
+            print('Books are empty.')
+        else:
+            return books_content
+        
+def updateBooks(data):
+    with open('files/books.json', 'w') as books_file:
+        json.dump(data, books_file)
 
 def add():
     title = input('Title: ').strip().title()
     author = input('Author: ').strip().title()
     year = int(input('Release year: ').strip())
 
-    with open('files/books.csv', 'a') as books_file:
-        books_file.write(f'{title},{author},{year}\n')
-        print('Adding...')
+    books = getBooks()
+
+    books.append(
+      dict(
+        title=title,
+        author=author,
+        release=year,
+      ),
+    )
+
+    updateBooks(books)
 
 def remove():
-    stored_books = getBooks()
+    books = getBooks()
 
-    for i, book in enumerate(stored_books):
+    for i, book in enumerate(books):
       print(i, book.get('title'))
 
     user_index = int(input('Please select book index: ').strip())
 
-    for i, book in enumerate(stored_books):
+    for i, book in enumerate(books):
         if user_index == i:
-            stored_books.pop(i)
+            books.pop(i)
 
-    clear_books()
-
-    with open('files/books.csv', 'a') as books_file:
-        for book in stored_books:
-            title = book.get('title')
-            author = book.get('author')
-            year = book.get('release')
-
-            books_file.write(f'{title},{author},{year}\n')
+    updateBooks(books)
 
 
-def show(books = getBooks()):
+def show(books):
     if len(books) <= 0:
         print('Store is empty.')
 
-    for book in books:
-        title = book.get('title')
-        author = book.get('author')
-        year = book.get('release')
-        
-        print(f'{title} by {author} in {year}')
+    for book in books:        
+        print('{title} by {author} in {release}'.format(**book))
 
 def find_book():
-    stored_books = getBooks()
-    finded_books = []
+    books = getBooks()
+    matched_books = []
 
     search_term = input('Search for book title: ').strip().lower()
 
-    for book in stored_books:
+    for book in books:
         if search_term in book['title'].lower():
-            finded_books.append(book)
+            matched_books.append(book)
 
-
-    return finded_books
+    return matched_books
 
 def menu():
     user_option = input(menu_promt).strip().lower()
@@ -104,7 +107,7 @@ def menu():
     elif user_option == 'd':
         remove()
     elif user_option == 's':
-        show()
+        show(getBooks())
     elif user_option == 'f':
         matched = find_book()
 
@@ -118,12 +121,12 @@ def menu():
 def listener():
     start_or_stop = input('Press "Y" to start or "N" to stop: ').lower()
 
-    while start_or_stop != 'n':
+    if start_or_stop == 'y':
         menu()
     else: 
-        print('Close thea app.')
+        print('Close the app.')
+        return
 
 listener()
-
 
     
