@@ -25,3 +25,15 @@ print(*uppered)
 numbers = [1, 56, 3, 5, 24, 19, 88, 37]
 even_nums = [number for number in numbers if number % 2 == 0]
 print(even_nums)
+
+# filter
+# is a predicate - the function witch takes any type of argument and returns True or False
+
+# we can do the same action with filter
+even_nums_f = list(filter(lambda n: n % 2 == 0, numbers))
+print(even_nums_f)
+
+# None in filter means that we want to see only truthy (True) values as result
+values = [0, "Hello", [], {}, 435, -4.2, ""]
+truthy_values = list(filter(None, values))
+print(truthy_values)
