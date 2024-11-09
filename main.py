@@ -19,3 +19,8 @@ def test():
     print(locals()) # returns a locals dict of scopes
 
 test()
+
+# __name__ var can show us in witch stage we run our function/file
+# "__main__" means that function/file runs in script phase (was called in side file)
+# "(your-file-name).py" means that function/file runs as a module (was called in other file)
+print('name:', __name__) 
