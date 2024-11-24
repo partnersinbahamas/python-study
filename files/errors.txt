@@ -1,0 +1,4 @@
+Error found in itemgetter func with: list index out of range
+Error found in itemgetter func with: list index out of range
+Error found in itemgetter func with: list index out of range
+Error found in itemgetter with values: dict_items([('collection', []), ('identifier', 1)]) func as: list index out of range
