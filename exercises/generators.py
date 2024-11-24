@@ -1,4 +1,5 @@
 import itertools
+import random
 
 # Exercises
 # 1. Write a generator that generates prime numbers in a specified range. You can make use of your solution to exercise 3 from day 8 as a starting point.
@@ -52,9 +53,66 @@ g_names = (name.title().strip() for name in names)
 
 print(next(g_names))
 
+# Game
 ranks = (2, 3, 4, 5, 6, 7, 8, 9, 10, "jack", "queen", "king", "ace")
 suits = ("clubs", "diamonds", "hearts", "spades")
 
-cards = ((rank, suit) for rank in ranks for suit in suits)
+cards = list(itertools.product(ranks, suits))
+
+def shuffle_deck(cards):
+    list_cards = list(cards)
+    random.shuffle(list_cards)
+
+    # iter is an a function witch returns generator iterator
+    return iter(list_cards)
+
+def get_players():
+    while True:
+        players_count = input('How many players are there ?').strip()
+
+        try:
+            players_count = int(players_count)
+        except ValueError:
+            print('Value error')
+        else:
+            if players_count == 0:
+                print('There can not be 0 players')
+            elif players_count < 2:
+                print('There should be minimal 2 players')
+            elif players_count in range(1, 11):
+                return players_count
+            
+def cards_to_player(deck, players_num):
+    f_cards = [next(deck) for _ in range(players_num)]
+    s_cards = [next(deck) for _ in range(players_num)]
+
+    hands = zip(f_cards, s_cards)
+
+    for i, (f, s) in enumerate(hands, start=1):
+        print(f'Player {i} got {f} and {s} cards')
+
+def cards_on_table(deck):
+    next(deck) # burn
+    flop = [next(deck) for _ in range(3)]
+    print(f'Flop: {flop}')
+    next(deck) # burn
+
+    torn = next(deck)
+    print(f'Torn: {torn}')
+    next(deck) # burn
+
+    river = next(deck)
+    print(f'River: {river}')
+
+def deck(cards):
+    cards_deck = shuffle_deck(cards)
+    number_of_players = get_players()
+
+    cards_to_player(cards_deck, number_of_players)
+    cards_on_table(cards_deck)
+
+deck(cards)
+
+
 
 
