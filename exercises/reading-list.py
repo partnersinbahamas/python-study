@@ -1,6 +1,6 @@
 import modules.booksModule as booksModule
 
-menu_promt = """Please select option:
+menu_promt: str = """Please select option:
 - 'a': to add
 - 's': to show store
 - 'd': to delete
@@ -10,8 +10,8 @@ menu_promt = """Please select option:
 
 booksModule.create_books_file()
 
-def menu():
-    user_option = input(menu_promt).strip().lower()
+def menu() -> None:
+    user_option: str = input(menu_promt).strip().lower()
 
     if user_option == 'q': listener()
 
@@ -20,7 +20,10 @@ def menu():
     elif user_option == 'd':
         booksModule.remove()
     elif user_option == 's':
-        booksModule.show(booksModule.getBooks())
+        books = booksModule.getBooks()
+
+        if books:
+            booksModule.show(booksModule.getBooks())
     elif user_option == 'f':
         matched = booksModule.find_book()
 
@@ -31,8 +34,8 @@ def menu():
             print('Nothing found.')
 
 
-def listener():
-    start_or_stop = input('Press "Y" to start or "N" to stop: ').lower()
+def listener() -> None:
+    start_or_stop: str = input('Press "Y" to start or "N" to stop: ').lower()
 
     if start_or_stop == 'y':
         menu()
